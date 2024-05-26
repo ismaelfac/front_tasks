@@ -13,7 +13,7 @@
             v-model="newTask"
             @keyup.enter="addTask"
           />
-          <button @click="addTask"><i class="fas fa-plus"></i></button>
+          <button @click="addTask"><i class="fa fa-plus"></i></button>
         </div>
         <!-- task lists -->
         <div class="taskItems">
@@ -56,36 +56,37 @@
     },
     computed: {
       incomplete() {
-        return this.tasks.filter(this.inProgress).length;
+        return []; //this.tasks.filter(this.inProgress).length;
       },
     },
     methods: {
       addTask() {
+        console.log('tasks'+ this.tasks);
         if (this.newTask) {
-          this.tasks.push({
-            title: this.newTask,
-            completed: false,
-          });
-          this.newTask = "";
+          // this.tasks.push({
+          //   title: this.newTask,
+          //   completed: false,
+          // });
+          // this.newTask = "";
         }
       },
       inProgress(task) {
-        return !this.isCompleted(task);
+        //return !this.isCompleted(task);
       },
       isCompleted(task) {
         return task.completed;
       },
       clearCompleted() {
-        this.tasks = this.tasks.filter(this.inProgress);
+        //this.tasks = this.tasks.filter(this.inProgress);
       },
       clearAll() {
-        this.tasks = [];
+       // this.tasks = [];
       },
       completeTask(task) {
         task.completed = !task.completed;
       },
       removeTask(index) {
-        this.tasks.splice(index, 1);
+       // this.tasks.splice(index, 1);
       },
     },
   };

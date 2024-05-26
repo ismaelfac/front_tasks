@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-      <task v-bind:Task="tasks"></task>
+      <nav-bar></nav-bar>
+      <task v-bind:tasks="tasks"></task>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Task from './components/TasksComponent.vue';
+import NavBar from './components/NavBar.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    Task
+    Task,
+    NavBar
   },
   data() {
     return {
